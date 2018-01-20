@@ -12,9 +12,6 @@ public class Produto {
 		this.id = id;
 	}
 	
-	public Produto(){
-		
-	}
 
 	public String getNome() {
 		return nome;

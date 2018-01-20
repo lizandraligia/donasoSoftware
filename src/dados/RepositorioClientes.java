@@ -37,14 +37,6 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		return instanceUser;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#salvar()
-	 */
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioClientes#salvar()
-	 */
 	@Override
 	public void salvar() {
 		try {
@@ -78,16 +70,7 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		return repo;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#cadastrar(classesBasicasPessoa.Usuario)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#cadastrar(classesBasicasPessoa.Usuario)
-	 */
+
 
 	@Override
 	public void cadastrar(Cliente c) {

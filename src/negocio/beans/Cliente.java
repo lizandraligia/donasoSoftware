@@ -1,11 +1,14 @@
 package negocio.beans;
 
+import java.util.ArrayList;
+
 public class Cliente extends Conta{
 
 	private String nome;
 	private int cpf;
 	private String endereco;
 	private String email;
+	private ArrayList<Pedido> pedidos;
 	
 	public Cliente(String nome, int cpf, String endereco, String email, String login, String senha){
 		
@@ -14,12 +17,9 @@ public class Cliente extends Conta{
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.email = email;
+		this.pedidos = new ArrayList<Pedido>();
 	}
 	
-	public Cliente(){
-		
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -50,6 +50,30 @@ public class Cliente extends Conta{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void addPedido(Pedido p) {
+		pedidos.add(p);
+	}
+	
+	public void deletePedido(Pedido p) {
+		if(p!=null) {
+			for (int j = 0; j < pedidos.size(); j++) {
+				if(p.getId() == pedidos.get(j).getId())
+					pedidos.remove(j);
+			}
+		} else {
+			System.out.println("Pedido Invalido!");
+		}
+		
+	}
+
+	public ArrayList<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(ArrayList<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 	
 	
