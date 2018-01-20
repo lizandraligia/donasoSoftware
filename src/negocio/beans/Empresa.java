@@ -19,7 +19,6 @@ public class Empresa extends Conta{
 		this.email = email;
 		this.pedidos = new ArrayList<Pedido>();
 	}
-<<<<<<< HEAD
 	
 	public void addPedido(Pedido p) {
 		pedidos.add(p);
@@ -36,8 +35,7 @@ public class Empresa extends Conta{
 		}
 		
 	}
-=======
->>>>>>> branch 'master' of https://github.com/DavidPierre21/donasoSoftware
+
 
 	public ArrayList<Pedido> getPedidos() {
 		return pedidos;

@@ -11,10 +11,7 @@ public class Produto {
 		this.descricao = descricao;
 		this.id = id;
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of https://github.com/DavidPierre21/donasoSoftware
+
 
 	public String getNome() {
 		return nome;

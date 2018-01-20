@@ -20,14 +20,11 @@ public class Pedido {
 		
 		this.descricao = descricao;
 	}
-<<<<<<< HEAD
 	
 
 	public Cliente getCliente() {
 		return cliente;
 	}
-=======
->>>>>>> branch 'master' of https://github.com/DavidPierre21/donasoSoftware
 
 
 	public void setCliente(Cliente cliente) {
