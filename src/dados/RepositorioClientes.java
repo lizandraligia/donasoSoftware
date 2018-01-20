@@ -73,14 +73,15 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 
 
 	@Override
-	public void cadastrar(Cliente c) {
+	public boolean cadastrar(Cliente c){	 //mudei pra boolean
 		if (c != null) {
 			clientes.add(c);
 			this.next = next + 1;
-
-			System.out.println("Cliente Cadastrado!");
+			this.salvar();
+			return true;
+			//System.out.println("Cliente Cadastrado!");
 		}
-		this.salvar();
+		return false; 
 	}
 
 	private int procurarIndice(String login) {
@@ -121,16 +122,18 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 	}
 
 	/* (non-Javadoc)
-	 * @see dados.IRepositorioClientes#remover(java.lang.String)
+	 * @see dados.IRepositorioCliente#remover(java.lang.String)
 	 */
 	@Override
-	public void remover(String login) {
+	public boolean remover(String login) { // mudei pra boolean 
 		if (existe(login)) {
 			Cliente c = procurar(login);
 			this.clientes.remove(c);
-			System.out.println("Cliente foi removido!");
+			return true;
+			//System.out.println("Cliente foi removido!");
 		} else {
-			System.out.println("Houve um problema! Cliente não pode ser removido.");
+			return false;
+			//System.out.println("Houve um problema! Cliente não pode ser removido.");
 		}
 
 	}
