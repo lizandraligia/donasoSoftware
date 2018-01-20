@@ -1,0 +1,17 @@
+package negocio.beans;
+
+public interface IRepositorioEmpresa {
+
+	void salvar();
+
+	void cadastrar(Empresa u);
+
+	Empresa procurar(String login);
+
+	void remover(String login);
+
+	boolean existe(String login);
+
+	void printar(Empresa u);
+
+}
