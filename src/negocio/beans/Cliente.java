@@ -20,6 +20,7 @@ public class Cliente extends Conta{
 		this.pedidos = new ArrayList<Pedido>();
 	}
 	
+	
 	public String getNome() {
 		return nome;
 	}

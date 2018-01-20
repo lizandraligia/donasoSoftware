@@ -22,6 +22,7 @@ public class Pedido {
 	}
 	
 
+	
 	public Cliente getCliente() {
 		return cliente;
 	}

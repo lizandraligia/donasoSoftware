@@ -20,6 +20,7 @@ public class Empresa extends Conta{
 		this.pedidos = new ArrayList<Pedido>();
 	}
 	
+	
 	public void addPedido(Pedido p) {
 		pedidos.add(p);
 	}
