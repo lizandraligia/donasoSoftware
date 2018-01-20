@@ -10,13 +10,12 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import negocio.beans.Cliente;
+import negocio.beans.Empresa;
 import negocio.beans.Funcionario;
 
 public class RepositorioFuncionario implements IRepositorioFuncionario, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 9129778942778379988L;
 	private static IRepositorioFuncionario instanceUser;
 	private ArrayList<Funcionario> funcionarios;
@@ -72,14 +71,15 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	}
 
 	@Override
-	public void cadastrar(Funcionario c) {
-		if (c != null) {
-			funcionarios.add(c);
+	public boolean cadastrar(Funcionario f){
+		if (f != null) {
+			funcionarios.add(f);
 			this.next = next + 1;
-
-			System.out.println("Funcionario Cadastrado!");
+			this.salvar();
+			return true;
+			//System.out.println("Funcionario Cadastrada!");
 		}
-		this.salvar();
+		return false; 
 	}
 
 	private int procurarIndice(String login) {
@@ -108,17 +108,20 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 		return saida;
 	}
 
-	@Override
-	public void remover(String login) {
+	public boolean remover(String login) {
 		if (existe(login)) {
-			Funcionario c = procurar(login);
-			this.funcionarios.remove(c);
-			System.out.println("Funcionario foi removido!");
+			Funcionario f = procurar(login);
+			this.funcionarios.remove(f);
+			return true;
+			//System.out.println("Funcionario foi removido!");
 		} else {
-			System.out.println("Houve um problema! Funcionario não pode ser removido.");
+			return false;
+			//System.out.println("Houve um problema! Funcionario não pode ser removido.");
 		}
 
 	}
+
+
 
 	@Override
 	public boolean existe(String login) {
@@ -133,13 +136,10 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 		return existe;
 	}
 
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioFuncionario#printar(negocio.beans.Cliente)
-	 */
 	@Override
-	public void printar(Funcionario c) {
+	public void printar(Funcionario f) {
 		try {
-			JOptionPane.showMessageDialog(null, c.toString());
+			JOptionPane.showMessageDialog(null, f.toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

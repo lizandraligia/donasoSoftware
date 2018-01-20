@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import negocio.beans.Empresa;
+import negocio.beans.Funcionario;
 import negocio.beans.Produto;
 
 public class RepositorioProduto implements IRepositorioProduto, Serializable{
@@ -74,15 +76,15 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 		return repo;
 	}
 
-	@Override
-	public void cadastrar(Produto u) {
-		if (u != null) {
-			produtos.add(u);
+	public boolean cadastrar(Produto p){
+		if (p != null) {
+			produtos.add(p);
 			this.next = next + 1;
-
-			System.out.println("Produto Cadastrado!");
+			this.salvar();
+			return true;
+			//System.out.println("Produto Cadastrada!");
 		}
-		this.salvar();
+		return false; 
 	}
 
 	private int procurarIndice(String nome) {
@@ -98,9 +100,6 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 		return indice;
 	}
 
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioProduto#procurar(java.lang.String)
-	 */
 	@Override
 	public Produto procurar(String nome) {
 		int i = this.procurarIndice(nome);
@@ -108,30 +107,26 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 		if (i != this.next) {
 			saida = this.produtos.get(i);
 		} else {
-			System.out.println("O PRODUTO NÃO FOI ENCONTRADA!");
+			System.out.println("O PRODUTO NÃO FOI ENCONTRADO!");
 		}
 
 		return saida;
 	}
 
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioProduto#remover(java.lang.String)
-	 */
 	@Override
-	public void remover(String nome) {
+	public boolean remover(String nome) {
 		if (existe(nome)) {
-			Produto u = procurar(nome);
-			this.produtos.remove(u);
-			System.out.println("Produto foi removido!");
+			Produto p = procurar(nome);
+			this.produtos.remove(p);
+			return true;
+			//System.out.println("Produto foi removido!");
 		} else {
-			System.out.println("Houve um problema! Produto não pôde ser removido.");
+			return false;
+			//System.out.println("Houve um problema! Produto não pode ser removido.");
 		}
 
 	}
 
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioProduto#existe(java.lang.String)
-	 */
 	@Override
 	public boolean existe(String nome) {
 		boolean existe = false;
@@ -149,9 +144,9 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 	 * @see dados.IRepositorioProduto#printar(negocio.beans.Empresa)
 	 */
 	@Override
-	public void printar(Produto u) {
+	public void printar(Produto p) {
 		try {
-			JOptionPane.showMessageDialog(null, u.toString());
+			JOptionPane.showMessageDialog(null, p.toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

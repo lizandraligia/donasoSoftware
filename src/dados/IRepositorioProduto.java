@@ -6,11 +6,11 @@ public interface IRepositorioProduto {
 
 	void salvar();
 
-	void cadastrar(Produto u);
+	boolean cadastrar(Produto u);
 
 	Produto procurar(String nome);
 
-	void remover(String nome);
+	boolean remover(String nome);
 
 	boolean existe(String nome);
 

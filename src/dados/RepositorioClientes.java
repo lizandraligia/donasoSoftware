@@ -14,8 +14,6 @@ import negocio.beans.Cliente;
 
 public class RepositorioClientes implements IRepositorioCliente, Serializable {
 
-	
-
 	private static final long serialVersionUID = 2483691135743332876L;
 	private static IRepositorioCliente instanceUser;
 	private ArrayList<Cliente> clientes;
@@ -97,16 +95,6 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		return indice;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#procurar(java.lang.String)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#procurar(java.lang.String)
-	 */
 
 	@Override
 	public Cliente procurar(String login) {
@@ -121,9 +109,7 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		return saida;
 	}
 
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioCliente#remover(java.lang.String)
-	 */
+
 	@Override
 	public boolean remover(String login) { // mudei pra boolean 
 		if (existe(login)) {
@@ -138,20 +124,6 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#existe(java.lang.String)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see dados.IRepositorioUsuario#existe(java.lang.String)
-	 */
-
-	/* (non-Javadoc)
-	 * @see dados.IRepositorioClientes#existe(java.lang.String)
-	 */
 	@Override
 	public boolean existe(String login) {
 		boolean existe = false;

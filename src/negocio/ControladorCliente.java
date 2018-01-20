@@ -1,5 +1,7 @@
 package negocio;
 
+import javax.swing.JOptionPane;
+
 import dados.IRepositorioCliente;
 import dados.RepositorioClientes;
 import exceptions.NaoExisteException;
@@ -7,7 +9,7 @@ import exceptions.UsuarioExistenteException;
 import exceptions.ValorInvalidoException;
 import negocio.beans.Cliente;
 
-public class ControladorCliente {
+public class ControladorCliente implements IControladorCliente {
 
 	private IRepositorioCliente repositorioC;
 	
@@ -15,15 +17,27 @@ public class ControladorCliente {
 		this.repositorioC = RepositorioClientes.getInstance(); 
 	}
 	
+	/* (non-Javadoc)
+	 * @see negocio.IControladorCliente#getRepositorioC()
+	 */
+	@Override
 	public IRepositorioCliente getRepositorioC() {
 		return repositorioC;
 	}
 
+	/* (non-Javadoc)
+	 * @see negocio.IControladorCliente#setRepositorioC(dados.IRepositorioCliente)
+	 */
+	@Override
 	public void setRepositorioC(IRepositorioCliente repositorioC) {
 		this.repositorioC = repositorioC;
 	}
 	
-	public boolean cadastrar(Cliente c) throws ValorInvalidoException, UsuarioExistenteException{
+	/* (non-Javadoc)
+	 * @see negocio.IControladorCliente#cadastrar(negocio.beans.Cliente)
+	 */
+	@Override
+	public boolean cadastrarCliente(Cliente c) throws ValorInvalidoException, UsuarioExistenteException{
 		
 		Cliente clienteExiste = this.repositorioC.procurar(c.getLogin());
 		if(clienteExiste != null){
@@ -38,15 +52,35 @@ public class ControladorCliente {
 		throw new ValorInvalidoException();
 	}
 	
-	public Cliente procurar(String login){
+	/* (non-Javadoc)
+	 * @see negocio.IControladorCliente#procurar(java.lang.String)
+	 */
+	@Override
+	public Cliente procurarCliente(String login){
 		return this.repositorioC.procurar(login);
 	}
 	
-	public boolean remover(String login) throws NaoExisteException{
+	/* (non-Javadoc)
+	 * @see negocio.IControladorCliente#remover(java.lang.String)
+	 */
+	@Override
+	public boolean removerCliente(String login) throws NaoExisteException{
 		if(login!=null){
 			return this.repositorioC.remover(login);
 		}
 		throw new NaoExisteException();
 	}
+	
+	public boolean loginCliente(String login, String senha) {
+		boolean logado = false;
+		if (repositorioC.existe(login) && repositorioC.procurar(login).getSenha().equals(senha)) {
+			logado = true;
+			JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO");
+		} else {
+			JOptionPane.showMessageDialog(null, "LOGIN NÃO REALIZADO");
+		}
+		return logado;
+	}
+
 	
 }

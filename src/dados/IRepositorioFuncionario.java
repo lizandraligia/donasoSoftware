@@ -6,11 +6,11 @@ public interface IRepositorioFuncionario {
 
 	void salvar();
 
-	void cadastrar(Funcionario c);
+	boolean cadastrar(Funcionario c);
 
 	Funcionario procurar(String login);
 	
-	void remover(String login);
+	boolean remover(String login);
 
 	boolean existe(String login);
 

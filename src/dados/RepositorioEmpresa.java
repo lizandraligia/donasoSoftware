@@ -10,14 +10,11 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import negocio.beans.Cliente;
 import negocio.beans.Empresa;
 
 public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1626060227666620516L;
 	private static IRepositorioEmpresa instanceUser;
 	private ArrayList<Empresa> empresas;
@@ -73,14 +70,15 @@ public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 	}
 
 	@Override
-	public void cadastrar(Empresa u) {
-		if (u != null) {
-			empresas.add(u);
+	public boolean cadastrar(Empresa e){
+		if (e != null) {
+			empresas.add(e);
 			this.next = next + 1;
-
-			System.out.println("Empresa Cadastrada!");
+			this.salvar();
+			return true;
+			//System.out.println("Empresa Cadastrada!");
 		}
-		this.salvar();
+		return false; 
 	}
 
 	private int procurarIndice(String login) {
@@ -110,17 +108,20 @@ public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 	}
 
 	@Override
-	public void remover(String login) {
+	public boolean remover(String login) {
 		if (existe(login)) {
-			Empresa u = procurar(login);
-			this.empresas.remove(u);
-			System.out.println("Empresa foi removido!");
+			Empresa c = procurar(login);
+			this.empresas.remove(c);
+			return true;
+			//System.out.println("Empresa foi removida!");
 		} else {
-			System.out.println("Houve um problema! Empresa não pôde ser removida.");
+			return false;
+			//System.out.println("Houve um problema! Empresa não pode ser removida.");
 		}
 
 	}
 
+	
 	@Override
 	public boolean existe(String login) {
 		boolean existe = false;
@@ -135,9 +136,9 @@ public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 	}
 
 	@Override
-	public void printar(Empresa u) {
+	public void printar(Empresa emp) {
 		try {
-			JOptionPane.showMessageDialog(null, u.toString());
+			JOptionPane.showMessageDialog(null, emp.toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
