@@ -15,10 +15,6 @@ public class Funcionario extends Conta{
 		this.endereco = endereco;
 		this.email = email;
 	}
-	
-	public Funcionario(){
-		
-	}
 
 	public String getNome() {
 		return nome;

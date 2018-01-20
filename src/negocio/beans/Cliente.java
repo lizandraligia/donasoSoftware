@@ -16,9 +16,6 @@ public class Cliente extends Conta{
 		this.email = email;
 	}
 	
-	public Cliente(){
-		
-	}
 
 	public String getNome() {
 		return nome;

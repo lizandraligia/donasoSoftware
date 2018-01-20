@@ -9,10 +9,6 @@ public class Pedido {
 		this.id = id;
 		this.descricao = descricao;
 	}
-	
-	public Pedido(){
-		
-	}
 
 	public int getId() {
 		return id;

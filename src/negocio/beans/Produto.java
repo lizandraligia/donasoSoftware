@@ -11,10 +11,6 @@ public class Produto {
 		this.descricao = descricao;
 		this.id = id;
 	}
-	
-	public Produto(){
-		
-	}
 
 	public String getNome() {
 		return nome;

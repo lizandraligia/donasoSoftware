@@ -15,10 +15,6 @@ public class Empresa extends Conta{
 		this.endereco = endereco;
 		this.email = email;
 	}
-	
-	public Empresa(){
-		
-	}
 
 	public String getNome() {
 		return nome;
