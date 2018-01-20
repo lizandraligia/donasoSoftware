@@ -15,7 +15,10 @@ public class Funcionario extends Conta{
 		this.endereco = endereco;
 		this.email = email;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/DavidPierre21/donasoSoftware
 
 	public String getNome() {
 		return nome;

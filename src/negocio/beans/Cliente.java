@@ -20,6 +20,10 @@ public class Cliente extends Conta{
 		this.pedidos = new ArrayList<Pedido>();
 	}
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/DavidPierre21/donasoSoftware
 	public String getNome() {
 		return nome;
 	}
