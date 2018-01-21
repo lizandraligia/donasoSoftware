@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="680.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="109.0" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #00868b;" text="Sou cliente" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="189.0" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #00868b;" text="Sou profissional" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="270.0" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #00868b;" text="Criar conta" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="83.0" fitWidth="346.0" layoutX="7.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/donaso.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="41.0" layoutX="578.0" layoutY="363.0" opacity="0.39" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.4;">
+               <image>
+                  <Image url="@../imagens/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="53.0" layoutY="214.0" text="Frase de efeito aqui aqui aqui" textFill="#00868b">
+               <font>
+                  <Font name="Arial Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="232.0" text="aqui aqui aqui aqui" textFill="#00868b">
+               <font>
+                  <Font name="Arial Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
