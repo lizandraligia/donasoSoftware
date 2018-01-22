@@ -21,7 +21,7 @@ public class ScreenManager {
 	
 	private ScreenManager(){
 		try {
-			login = new FXMLLoader(this.getClass().getResource("Login.fxml"));
+			login = new FXMLLoader(this.getClass().getResource("LoginCliente.fxml"));
 			this.paneLogin = login.load();
 			menuCliente = new FXMLLoader(this.getClass().getResource("MenuCliente.fxml"));
 			this.paneMenuCliente = menuCliente.load();
