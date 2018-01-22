@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="680.0" prefWidth="1020.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <children>
@@ -30,9 +29,9 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="440.0" layoutY="338.0" prefHeight="25.0" prefWidth="226.0" />
-            <JFXPasswordField layoutX="440.0" layoutY="389.0" prefHeight="25.0" prefWidth="226.0" />
-            <JFXButton buttonType="RAISED" layoutX="575.0" layoutY="464.0" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #00868b;" text="Entrar" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <JFXTextField fx:id="tfLogin" layoutX="440.0" layoutY="338.0" prefHeight="25.0" prefWidth="226.0" />
+            <JFXPasswordField fx:id="tfSenha" layoutX="440.0" layoutY="389.0" prefHeight="25.0" prefWidth="226.0" />
+            <JFXButton buttonType="RAISED" layoutX="575.0" layoutY="464.0" onAction="#Login" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #00868b;" text="Entrar" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
