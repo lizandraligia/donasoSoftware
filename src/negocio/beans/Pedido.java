@@ -21,8 +21,6 @@ public class Pedido {
 		this.descricao = descricao;
 	}
 	
-
-	
 	public Cliente getCliente() {
 		return cliente;
 	}

@@ -218,6 +218,42 @@ public class Fachada implements IFachada {
 		return controladorProduto.removerProduto(nome);
 	}
 
+	public Object checarTipo(String login) {
+		if(this.procurarCliente(login) != null) {
+			return this.procurarCliente(login).getClass();
+		} else if(this.procurarEmpresa(login) != null) {
+			return this.procurarEmpresa(login).getClass();
+		} else if(this.procurarFuncionario(login) != null) {
+			return this.procurarFuncionario(login).getClass();
+		} else {
+			return Object.class;
+		}
+	}
 	
+	public boolean fazerPostagem(Produto p, Funcionario f, String postagem) {
+		boolean permissao = false;
+		String msg = null;
+		if(p!=null && f!= null && p.getFuncionarios().contains(f)) {
+			msg = f.getLogin() + ": " + postagem;
+			p.addPostagem(msg);
+			permissao = true;
+		} else {
+			System.out.println("Postagem nao permitida!");
+		}
+		return permissao;
+	}
+	
+	public boolean fazerComentario(Produto p, Cliente c, String comentario) {
+		boolean permissao = false;
+		String msg = null;
+		if(p!=null && c!=null && p.getCliente().getLogin() == c.getLogin()) {
+			msg = c.getLogin() + ": " + comentario;
+			p.addComentario(msg);
+			permissao = true;
+		} else {
+			System.out.println("Comentario nao permitido");
+		}
+		return permissao;
+	}
 	
 }

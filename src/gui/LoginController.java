@@ -11,7 +11,7 @@ public class LoginController {
 	@FXML TextField tfLogin;
 	@FXML PasswordField tfSenha;
 	
-	private IFachada fachada = IFachada.getInstance(); // falta corrigir aqui
+	IFachada fachada = Fachada.getInstance(); // nao falta mais
 	
 	public void Login(){
 		String login = this.tfLogin.getText();

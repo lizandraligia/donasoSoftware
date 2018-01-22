@@ -59,5 +59,10 @@ public interface IFachada {
 	Produto procurarProduto(String nome);
 
 	boolean removerProduto(String nome) throws NaoExisteException;
+	
+	Object checarTipo(String login);
 
+	boolean fazerPostagem(Produto p, Funcionario f, String postagem);
+	
+	boolean fazerComentario(Produto p, Cliente c, String comentario);
 }
