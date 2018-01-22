@@ -14,7 +14,6 @@ public class TelaInicioController {
 	@FXML
 	void botaoClienteAction(ActionEvent event) {
 		Node node = (Node) event.getSource();
-	
 		Stage stage = (Stage) node.getScene().getWindow();
 		Parent root = null;
 		try {
