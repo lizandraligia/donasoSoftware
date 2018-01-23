@@ -28,9 +28,9 @@ public class ScreenManager {
 			this.paneCriarConta = criarConta.load();
 			menuCliente = new FXMLLoader(this.getClass().getResource("MenuCliente.fxml"));
 			this.paneMenuCliente = menuCliente.load();
-			menuCliente = new FXMLLoader(this.getClass().getResource("MenuEmpresa.fxml"));
+			menuEmpresa = new FXMLLoader(this.getClass().getResource("MenuEmpresa.fxml"));
 			this.paneMenuEmpresa = menuEmpresa.load();
-			menuCliente = new FXMLLoader(this.getClass().getResource("MenuFuncionario.fxml"));
+			menuFuncionario = new FXMLLoader(this.getClass().getResource("MenuFuncionario.fxml"));
 			this.paneMenuFuncionario = menuFuncionario.load();
 			telaInicio = new FXMLLoader(this.getClass().getResource("TelaInicio.fxml"));
 			this.paneTelaInicio = telaInicio.load();
