@@ -1,10 +1,10 @@
 package gui;
 
-public class MenuClienteController {
+public class VisualizarPerfilController {
 
-	public void perfil(){
+	public void voltar(){
 		try{
-			ScreenManager.getInstance().getVisualizarPerfil();
+			ScreenManager.getInstance().getMenuCliente();
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());

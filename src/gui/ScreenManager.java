@@ -7,8 +7,8 @@ import javafx.scene.layout.BorderPane;
 public class ScreenManager {
 
 	BorderPane border, paneLoginCliente, paneMenuCliente, paneMenuEmpresa;
-	BorderPane paneMenuFuncionario, paneTelaInicio, paneCriarConta;
-	FXMLLoader loginCliente, menuCliente, menuEmpresa, menuFuncionario, telaInicio, criarConta;
+	BorderPane paneMenuFuncionario, paneTelaInicio, paneCriarConta, paneVisualizarPerfil;
+	FXMLLoader loginCliente, menuCliente, menuEmpresa, menuFuncionario, telaInicio, criarConta, visualizarPerfil;
 
 	
 	public static ScreenManager instancia;
@@ -28,12 +28,14 @@ public class ScreenManager {
 			this.paneCriarConta = criarConta.load();
 			menuCliente = new FXMLLoader(this.getClass().getResource("MenuCliente.fxml"));
 			this.paneMenuCliente = menuCliente.load();
-			menuCliente = new FXMLLoader(this.getClass().getResource("MenuEmpresa.fxml"));
+			menuEmpresa = new FXMLLoader(this.getClass().getResource("MenuEmpresa.fxml"));
 			this.paneMenuEmpresa = menuEmpresa.load();
-			menuCliente = new FXMLLoader(this.getClass().getResource("MenuFuncionario.fxml"));
+			menuFuncionario = new FXMLLoader(this.getClass().getResource("MenuFuncionario.fxml"));
 			this.paneMenuFuncionario = menuFuncionario.load();
 			telaInicio = new FXMLLoader(this.getClass().getResource("TelaInicio.fxml"));
 			this.paneTelaInicio = telaInicio.load();
+			visualizarPerfil = new FXMLLoader(this.getClass().getResource("VisualizarPerfil.fxml"));
+			this.paneVisualizarPerfil = visualizarPerfil.load();
 			
 			
 			this.border = Main.getRoot();
@@ -66,6 +68,8 @@ public class ScreenManager {
 		border.setCenter(this.paneMenuFuncionario);
 	}
 	
-	
+	public void getVisualizarPerfil(){	
+		border.setCenter(this.paneVisualizarPerfil);
+	}
 	
 }
