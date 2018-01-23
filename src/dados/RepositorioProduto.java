@@ -24,18 +24,14 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 	private ArrayList<Produto> produtos;
 	private int next;
 
-	public RepositorioProduto(int tamanho) {
-		this.produtos = new ArrayList<Produto>(tamanho);
+	public RepositorioProduto() {
+		this.produtos = new ArrayList<Produto>();
 		this.next = 0;
 	}
 
 	public static synchronized IRepositorioProduto getInstance() {
-		if (instanceUser == null) {
-			if (ler() == null) {
-				instanceUser = new RepositorioProduto(100);
-			} else {
-				instanceUser = (IRepositorioProduto) ler();
-			}
+		if(instanceUser == null) {
+			instanceUser = new RepositorioProduto();
 		}
 		return instanceUser;
 	}
@@ -57,33 +53,15 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 		}
 	}
 
-	private static IRepositorioProduto ler() {
-		IRepositorioProduto repo = null;
-		try {
-			File f = new File("Produtos\\RepositorioProduto.db");
-
-			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			Object o = ois.readObject();
-			if (o != null) {
-				repo = (RepositorioProduto) o;
-				System.out.println("agora ele foi des-serializado com sucesso");
-			}
-			ois.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return repo;
-	}
 
 	public boolean cadastrar(Produto p){
 		if (p != null) {
 			produtos.add(p);
 			this.next = next + 1;
-			this.salvar();
 			return true;
 			//System.out.println("Produto Cadastrada!");
 		}
+		this.salvar();
 		return false; 
 	}
 

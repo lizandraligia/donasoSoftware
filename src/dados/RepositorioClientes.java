@@ -19,18 +19,14 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 	private ArrayList<Cliente> clientes;
 	private int next;
 
-	public RepositorioClientes(int tamanho) {
-		this.clientes = new ArrayList<Cliente>(tamanho);
+	public RepositorioClientes() {
+		this.clientes = new ArrayList<Cliente>();
 		this.next = 0;
 	}
 
 	public static synchronized IRepositorioCliente getInstance() {
-		if (instanceUser == null) {
-			if (ler() == null) {
-				instanceUser = new RepositorioClientes(100);
-			} else {
-				instanceUser = (IRepositorioCliente) ler();
-			}
+		if(instanceUser == null) {
+			instanceUser = new RepositorioClientes();
 		}
 		return instanceUser;
 	}
@@ -49,36 +45,16 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		}
 	}
 
-	private static IRepositorioCliente ler() {
-		IRepositorioCliente repo = null;
-		try {
-			File f = new File("Cliente\\RepositorioClientes.db");
-
-			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			Object o = ois.readObject();
-			if (o != null) {
-				repo = (RepositorioClientes) o;
-				System.out.println("agora ele foi des-serializado com sucesso");
-			}
-			ois.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return repo;
-	}
-
-
 
 	@Override
 	public boolean cadastrar(Cliente c){	 //mudei pra boolean
 		if (c != null) {
 			clientes.add(c);
 			this.next = next + 1;
-			this.salvar();
 			return true;
 			//System.out.println("Cliente Cadastrado!");
 		}
+		this.salvar();
 		return false; 
 	}
 
@@ -130,7 +106,7 @@ public class RepositorioClientes implements IRepositorioCliente, Serializable {
 		Cliente c = this.procurar(login);
 		if (c != null) {
 			existe = true;
-			System.out.println("Cliente existe!");
+			System.out.println("Cliente " + login + " existe!");
 		} else {
 			System.out.println("Cliente não existe!");
 		}

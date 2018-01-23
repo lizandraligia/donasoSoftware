@@ -19,5 +19,7 @@ public interface IControladorCliente {
 	boolean removerCliente(String login) throws NaoExisteException;
 	
 	boolean loginCliente(String login, String senha);
+	
+	void salvarCliente();
 
 }

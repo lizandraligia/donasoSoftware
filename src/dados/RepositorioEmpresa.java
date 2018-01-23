@@ -20,18 +20,14 @@ public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 	private ArrayList<Empresa> empresas;
 	private int next;
 
-	public RepositorioEmpresa(int tamanho) {
-		this.empresas = new ArrayList<Empresa>(tamanho);
+	public RepositorioEmpresa() {
+		this.empresas = new ArrayList<Empresa>();
 		this.next = 0;
 	}
 
 	public static synchronized IRepositorioEmpresa getInstance() {
-		if (instanceUser == null) {
-			if (ler() == null) {
-				instanceUser = new RepositorioEmpresa(100);
-			} else {
-				instanceUser = (IRepositorioEmpresa) ler();
-			}
+		if(instanceUser == null) {
+			instanceUser = new RepositorioEmpresa();
 		}
 		return instanceUser;
 	}
@@ -50,34 +46,15 @@ public class RepositorioEmpresa implements IRepositorioEmpresa, Serializable {
 		}
 	}
 
-	private static IRepositorioEmpresa ler() {
-		IRepositorioEmpresa repo = null;
-		try {
-			File f = new File("Empresas\\RepositorioEmpresa.db");
-
-			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			Object o = ois.readObject();
-			if (o != null) {
-				repo = (RepositorioEmpresa) o;
-				System.out.println("agora ele foi des-serializado com sucesso");
-			}
-			ois.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return repo;
-	}
-
 	@Override
 	public boolean cadastrar(Empresa e){
 		if (e != null) {
 			empresas.add(e);
 			this.next = next + 1;
-			this.salvar();
 			return true;
 			//System.out.println("Empresa Cadastrada!");
 		}
+		this.salvar();
 		return false; 
 	}
 

@@ -21,18 +21,14 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	private ArrayList<Funcionario> funcionarios;
 	private int next;
 
-	public RepositorioFuncionario(int tamanho) {
-		this.funcionarios = new ArrayList<Funcionario>(tamanho);
+	public RepositorioFuncionario() {
+		this.funcionarios = new ArrayList<Funcionario>();
 		this.next = 0;
 	}
 
 	public static synchronized IRepositorioFuncionario getInstance() {
-		if (instanceUser == null) {
-			if (ler() == null) {
-				instanceUser = new RepositorioFuncionario(100);
-			} else {
-				instanceUser = (IRepositorioFuncionario) ler();
-			}
+		if(instanceUser == null) {
+			instanceUser = new RepositorioFuncionario();
 		}
 		return instanceUser;
 	}
@@ -51,34 +47,16 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 		}
 	}
 
-	private static IRepositorioFuncionario ler() {
-		IRepositorioFuncionario repo = null;
-		try {
-			File f = new File("Funcionarios\\RepositorioFuncionario.db");
-
-			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			Object o = ois.readObject();
-			if (o != null) {
-				repo = (RepositorioFuncionario) o;
-				System.out.println("agora ele foi des-serializado com sucesso");
-			}
-			ois.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return repo;
-	}
 
 	@Override
 	public boolean cadastrar(Funcionario f){
 		if (f != null) {
 			funcionarios.add(f);
 			this.next = next + 1;
-			this.salvar();
 			return true;
 			//System.out.println("Funcionario Cadastrada!");
 		}
+		this.salvar();
 		return false; 
 	}
 

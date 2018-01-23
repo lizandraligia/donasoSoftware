@@ -19,5 +19,7 @@ public interface IControladorFuncionario {
 	boolean removerFuncionario(String login) throws NaoExisteException;
 
 	boolean loginFuncionario(String login, String senha);
+	
+	void salvarFuncionario();
 
 }

@@ -28,5 +28,7 @@ public interface IControladorEmpresa {
 	boolean removerEmpresa(String login) throws NaoExisteException;
 
 	boolean loginEmpresa(String login, String senha);
+	
+	void salvarEmpresa();
 
 }

@@ -17,5 +17,7 @@ public interface IControladorProduto {
 	Produto procurarProduto(String nome);
 
 	boolean removerProduto(String nome) throws NaoExisteException;
+	
+	void salvarProduto();
 
 }

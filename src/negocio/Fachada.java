@@ -61,6 +61,10 @@ public class Fachada implements IFachada {
 	/* (non-Javadoc)
 	 * @see negocio.IFachada#procurarCliente(java.lang.String)
 	 */
+	public void salvarCliente() {
+		controladorCliente.salvarCliente();
+	}
+	
 	@Override
 	public Cliente procurarCliente(String login) {
 		return controladorCliente.procurarCliente(login);
@@ -109,6 +113,10 @@ public class Fachada implements IFachada {
 	/* (non-Javadoc)
 	 * @see negocio.IFachada#procurarEmpresa(java.lang.String)
 	 */
+	public void salvarEmpresa() {
+		controladorEmpresa.salvarEmpresa();
+	}
+	
 	@Override
 	public Empresa procurarEmpresa(String login) {
 		return controladorEmpresa.procurarEmpresa(login);
@@ -157,6 +165,10 @@ public class Fachada implements IFachada {
 	/* (non-Javadoc)
 	 * @see negocio.IFachada#procurarFuncionario(java.lang.String)
 	 */
+	public void salvarFuncionario() {
+		controladorFuncionario.salvarFuncionario();
+	}
+	
 	@Override
 	public Funcionario procurarFuncionario(String login) {
 		return controladorFuncionario.procurarFuncionario(login);
@@ -205,6 +217,10 @@ public class Fachada implements IFachada {
 	/* (non-Javadoc)
 	 * @see negocio.IFachada#procurarProduto(java.lang.String)
 	 */
+	public void salvarProduto() {
+		controladorProduto.salvarProduto();
+	}
+	
 	@Override
 	public Produto procurarProduto(String nome) {
 		return controladorProduto.procurarProduto(nome);
@@ -255,5 +271,6 @@ public class Fachada implements IFachada {
 		}
 		return permissao;
 	}
+	
 	
 }

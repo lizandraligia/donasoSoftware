@@ -20,6 +20,10 @@ public class ControladorCliente implements IControladorCliente {
 	/* (non-Javadoc)
 	 * @see negocio.IControladorCliente#getRepositorioC()
 	 */
+	public void salvarCliente() {
+		repositorioC.salvar();
+	}
+	
 	@Override
 	public IRepositorioCliente getRepositorioC() {
 		return repositorioC;
@@ -71,6 +75,12 @@ public class ControladorCliente implements IControladorCliente {
 		throw new NaoExisteException();
 	}
 	
+	
+	
+	public void printar(Cliente c) {
+		repositorioC.printar(c);
+	}
+
 	public boolean loginCliente(String login, String senha) {
 		boolean logado = false;
 		if (repositorioC.existe(login) && repositorioC.procurar(login).getSenha().equals(senha)) {

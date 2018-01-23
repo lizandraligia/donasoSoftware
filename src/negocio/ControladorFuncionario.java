@@ -68,6 +68,10 @@ public class ControladorFuncionario implements IControladorFuncionario {
 		}
 		throw new NaoExisteException();
 	}
+	
+	public void salvarFuncionario() {
+		repositorioF.salvar();
+	}
 
 	/* (non-Javadoc)
 	 * @see negocio.IControladorFuncionario#login(java.lang.String, java.lang.String)
