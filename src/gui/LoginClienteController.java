@@ -6,12 +6,12 @@ import javafx.scene.control.TextField;
 import negocio.Fachada;
 import negocio.IFachada;
 
-public class LoginController {
+public class LoginClienteController {
 
 	@FXML TextField tfLogin;
 	@FXML PasswordField tfSenha;
 	
-	IFachada fachada = Fachada.getInstance(); // nao falta mais
+	IFachada fachada = Fachada.getInstance();
 	
 	public void Login(){
 		String login = this.tfLogin.getText();

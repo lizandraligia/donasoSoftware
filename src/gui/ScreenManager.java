@@ -6,8 +6,8 @@ import javafx.scene.layout.BorderPane;
 
 public class ScreenManager {
 
-	BorderPane border, paneLogin, paneMenuCliente, paneTelaInicio;
-	FXMLLoader login, menuCliente, telaInicio;
+	BorderPane border, paneLoginCliente, paneMenuCliente, paneTelaInicio;
+	FXMLLoader loginCliente, menuCliente, telaInicio;
 
 	
 	public static ScreenManager instancia;
@@ -21,8 +21,8 @@ public class ScreenManager {
 	
 	private ScreenManager(){
 		try {
-			login = new FXMLLoader(this.getClass().getResource("LoginCliente.fxml"));
-			this.paneLogin = login.load();
+			loginCliente = new FXMLLoader(this.getClass().getResource("LoginCliente.fxml"));
+			this.paneLoginCliente = loginCliente.load();
 			menuCliente = new FXMLLoader(this.getClass().getResource("MenuCliente.fxml"));
 			this.paneMenuCliente = menuCliente.load();
 			telaInicio = new FXMLLoader(this.getClass().getResource("TelaInicio.fxml"));
@@ -34,8 +34,8 @@ public class ScreenManager {
 		} 
 	}
 	
-	public void getLogin(){	
-		border.setCenter(this.paneLogin);	
+	public void getLoginCliente(){	
+		border.setCenter(this.paneLoginCliente);	
 	}
 	
 	public void getMenuCliente(){	
