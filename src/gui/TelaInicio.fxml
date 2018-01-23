@@ -22,7 +22,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="675.0" layoutY="392.0" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #00868b;" text="Criar conta" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <JFXButton buttonType="RAISED" layoutX="675.0" layoutY="392.0" onAction="#criarConta" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #00868b;" text="Criar conta" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>

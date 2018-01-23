@@ -13,4 +13,13 @@ public class TelaInicioController {
 		}
 	}
 	
+	public void criarConta(){
+		try{
+			ScreenManager.getInstance().getCriarConta();
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
 }
