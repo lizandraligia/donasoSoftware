@@ -1,6 +1,6 @@
 package gui;
 
-public class VisualizarPerfilController {
+public class EditarPerfilController {
 
 	public void voltar(){
 		try{
@@ -20,13 +20,5 @@ public class VisualizarPerfilController {
 		}
 	}
 	
-	public void editar(){
-		try{
-			ScreenManager.getInstance().getEditarPerfil();
-		}
-		catch(Exception e){
-			System.out.println(e.getMessage());
-		}
-	}
 	
 }

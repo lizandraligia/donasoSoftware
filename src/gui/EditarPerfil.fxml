@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VisualizarPerfilController">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EditarPerfilController">
    <center>
-      <AnchorPane prefHeight="680.0" prefWidth="1020.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="680.0" prefWidth="1020.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="64.0" fitWidth="231.0" layoutX="36.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,7 +23,7 @@
                   <Image url="@../imagens/logo.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="646.0" layoutY="209.0" prefHeight="72.0" prefWidth="194.0" style="-fx-background-color: #00868b;" text="Produto" textFill="WHITE">
+            <JFXButton layoutX="886.0" layoutY="27.0" onAction="#sair" prefHeight="0.0" prefWidth="98.0" style="-fx-background-color: #00868b;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
@@ -33,12 +33,22 @@
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="886.0" layoutY="27.0" onAction="#sair" prefHeight="0.0" prefWidth="98.0" style="-fx-background-color: #00868b;" text="Sair" textFill="WHITE">
+            <JFXButton layoutX="646.0" layoutY="209.0" prefHeight="72.0" prefWidth="194.0" style="-fx-background-color: #00868b;" text="Produto" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00858a7a" height="478.0" layoutX="111.0" layoutY="108.0" stroke="TRANSPARENT" strokeType="INSIDE" width="446.0" />
+            <JFXButton layoutX="270.0" layoutY="528.0" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #00868b;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="269.0" layoutY="130.0" prefHeight="27.0" prefWidth="157.0" text="Editar Dados" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
             <Label layoutX="184.0" layoutY="199.0" text="Nome " textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="18.0" />
@@ -59,36 +69,10 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="269.0" layoutY="130.0" text="Meus Dados" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="254.0" layoutY="198.0" text="esse texto muda " textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="255.0" layoutY="232.0" text="esse texto muda " textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="255.0" layoutY="269.0" text="esse texto muda " textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="254.0" layoutY="300.0" text="esse texto muda " textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Label>
-            <JFXButton layoutX="270.0" layoutY="528.0" onAction="#editar" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #00868b;" text="Editar Dados" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="12.0" />
-               </font>
-            </JFXButton>
+            <JFXTextField layoutX="251.0" layoutY="192.0" prefHeight="25.0" prefWidth="269.0" />
+            <JFXTextField layoutX="251.0" layoutY="227.0" prefHeight="25.0" prefWidth="269.0" />
+            <JFXTextField layoutX="251.0" layoutY="262.0" prefHeight="25.0" prefWidth="269.0" />
+            <JFXTextField layoutX="251.0" layoutY="294.0" prefHeight="25.0" prefWidth="269.0" />
          </children>
       </AnchorPane>
    </center>

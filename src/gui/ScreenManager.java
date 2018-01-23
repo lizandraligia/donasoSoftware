@@ -7,8 +7,8 @@ import javafx.scene.layout.BorderPane;
 public class ScreenManager {
 
 	BorderPane border, paneLoginCliente, paneMenuCliente, paneMenuEmpresa;
-	BorderPane paneMenuFuncionario, paneTelaInicio, paneCriarConta, paneVisualizarPerfil;
-	FXMLLoader loginCliente, menuCliente, menuEmpresa, menuFuncionario, telaInicio, criarConta, visualizarPerfil;
+	BorderPane paneMenuFuncionario, paneTelaInicio, paneCriarConta, paneVisualizarPerfil, paneEditarPerfil;
+	FXMLLoader loginCliente, menuCliente, menuEmpresa, menuFuncionario, telaInicio, criarConta, visualizarPerfil, editarPerfil;
 
 	
 	public static ScreenManager instancia;
@@ -36,6 +36,8 @@ public class ScreenManager {
 			this.paneTelaInicio = telaInicio.load();
 			visualizarPerfil = new FXMLLoader(this.getClass().getResource("VisualizarPerfil.fxml"));
 			this.paneVisualizarPerfil = visualizarPerfil.load();
+			editarPerfil = new FXMLLoader(this.getClass().getResource("EditarPerfil.fxml"));
+			this.paneEditarPerfil = editarPerfil.load();
 			
 			
 			this.border = Main.getRoot();
@@ -70,6 +72,10 @@ public class ScreenManager {
 	
 	public void getVisualizarPerfil(){	
 		border.setCenter(this.paneVisualizarPerfil);
+	}
+	
+	public void getEditarPerfil(){	
+		border.setCenter(this.paneEditarPerfil);
 	}
 	
 }
