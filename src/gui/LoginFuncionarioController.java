@@ -18,7 +18,7 @@ public class LoginFuncionarioController {
 		String senha = this.tfSenha.getText();
 		try{
 			this.fachada.loginFuncionario(login, senha);
-			//ScreenManager.getInstance().getMenuCliente();
+			ScreenManager.getInstance().getMenuFuncionario();
 
 		}
 		catch(Exception e){
